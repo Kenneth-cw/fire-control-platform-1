@@ -1,0 +1,31 @@
+##服务信息
+server:
+  port: 8085
+  servlet:
+    context-path: /
+
+#eureka配置信息
+#eureka:
+#  instance:
+#    hostname: shine-model
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://118.25.46.85:8090/eureka/
+
+spring:
+  #项目名
+  application:
+    name: shine-model
+  #当遇到同样名字的时候，是否允许覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+
+  #数据源连接信息
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://118.25.46.85:3306/shine?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    username: iotuser
+#    password: 3edc@wsx!qaz

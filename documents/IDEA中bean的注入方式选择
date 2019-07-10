@@ -1,0 +1,69 @@
+关于bean的注入方式，有以下三种常用：
+    1. 通过构造器注入
+    2. 通过setter方法注入
+    3. 通过field反射注入
+
+例子：
+    public class DI(){
+
+        // 1.通过构造器注入
+        private DependencyA a;
+        @Autowired
+        public DI(DependencyA a){
+            this.a = a;
+        }
+
+        // 2.通过setter方法注入
+        private DependencyB b;
+        @Autowired
+        public void setDependencyB(DependencyB b){
+            this.b = b;
+        }
+
+        // 3.通过field反射注入
+        @Autowired
+        private DependencyC c;
+    }
+
+弊端：
+    1. 如果你使用的是构造器注入：
+        当你有十几个甚至更多对象需要注入时，你的构造函数的参数个数可能会长到无法想像。
+    2. 如果你使用的是setter方法注入：
+        不能将属性设置为final。
+    3. 如果你使用的是field反射注入：
+        如果不使用Spring框架，这个属性只能通过反射注入，太麻烦了！这根本不符合JavaBean规范。
+        当不是用过Spring创建的对象时，还可能引起NullPointerException。
+        不能用final修饰这个属性。
+
+spring官方推荐：
+    1. Spring3.0官方文档建议使用setter注入覆盖构造器注入。
+    2. Spring4.0官方文档建议使用构造器注入。
+
+结论：
+    1. 如果注入的属性是必选的属性，则通过构造器注入。
+    2. 如果注入的属性是可选的属性，则通过setter方法注入。
+    3. 至于field注入，不建议使用。
+
+当前项目中的使用方式：
+    以DeviceBaseInfoController为例，注入IDeviceBaseInfoService，如下：
+
+    public class DeviceBaseInfoController {
+         //构造器注入
+         private IDeviceBaseInfoService deviceBaseInfoService;
+         @Autowired
+         public DeviceBaseInfoController(IDeviceBaseInfoService deviceBaseInfoService) {
+             this.deviceBaseInfoService = deviceBaseInfoService;
+         }
+
+         //setter方法注入
+         private IDeviceBaseInfoService deviceBaseInfoService;
+         @Autowired
+         public void setDeviceBaseInfoService(IDeviceBaseInfoService deviceBaseInfoService) {
+             this.deviceBaseInfoService = deviceBaseInfoService;
+         }
+
+         //field反射注入
+         @Autowire
+         private IDeviceBaseInfoService deviceBaseInfoService;
+
+    }

@@ -1,0 +1,70 @@
+#服务信息
+server:
+  port: 8098
+  servlet:
+    context-path: /
+
+#eureka配置信息
+#eureka:
+#  instance:
+#    hostname: iot-web-fire
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8090/eureka/
+
+spring:
+  #项目名
+  application:
+    name: iot-web-fire
+  #当遇到同样名字的时候，是否允许覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+    #数据源连接信息
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.25.46.85:3306/iot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: iotuser
+    password: 3edc@wsx!qaz
+  #热部署配置
+  devtools:
+    restart:
+      enabled: true #该属性可以快速启用和禁止热部署，false不使用热部署
+      additional-paths: src/main/java  # 添加那个目录的文件需要restart
+      exclude: static/** # 排除那个目录的文件不需要restart
+  redis:
+    database: 0
+    host: 118.25.46.85 #127.0.0.1 #118.25.46.85
+    port: 6379
+    #    password: #连接密码
+    jedis:
+      pool:
+        max-active: 8 #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8 #最大等待连接中的数量,设 0 为没有限制
+        max-wait: -1ms # 最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 0 #最小等待连接中的数量,设 0 为没有限制
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+      shutdown-timeout: 100ms
+    timeout: 5000
+
+mybatis-plus:
+  mapper-locations:  classpath:mappers/*.xml
+  type-aliases-package: com.shine.iot.core.entity
+  configuration:
+    map-underscore-to-camel-case: false
+    aggressive-lazy-loading: true
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      db-config:
+        table-underline: false
+        id-type: auto  # id类型
+        field-strategy: not_null
+        db-type: mysql

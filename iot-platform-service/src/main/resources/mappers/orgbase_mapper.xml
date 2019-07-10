@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shine.iot.platform.service.mapper.OrgBaseInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="orgBaseMap" type="com.shine.iot.model.entity.OrgBaseInfoModel">
+        <id column="orgId" property="orgId" jdbcType="BIGINT"/>
+        <result column="orgName" property="orgName" jdbcType="VARCHAR"/>
+        <result column="orgNational" property="orgNational" jdbcType="VARCHAR"/>
+        <result column="parentOrgId" property="parentOrgId" jdbcType="BIGINT"/>
+        <result column="industryClass" property="userAge" jdbcType="VARCHAR"/>
+        <result column="orgType" property="orgType" jdbcType="VARCHAR"/>
+        <result column="orgCode" property="orgCode" jdbcType="VARCHAR"/>
+        <result column="regAddr" property="regAddr" jdbcType="VARCHAR"/>
+        <result column="officeAddr" property="officeAddr" jdbcType="VARCHAR"/>
+        <result column="orgContact" property="orgContact" jdbcType="VARCHAR"/>
+        <result column="orgContactPhone" property="orgContactPhone" jdbcType="VARCHAR"/>
+        <result column="orgPostCode" property="orgPostCode" jdbcType="VARCHAR"/>
+        <result column="orgLati" property="orgLati" jdbcType="VARCHAR"/>
+        <result column="orgLong" property="orgLong" jdbcType="VARCHAR"/>
+        <result column="addrProCode" property="addrProCode" jdbcType="VARCHAR"/>
+        <result column="orgProName" property="orgProName" jdbcType="VARCHAR"/>
+        <result column="orgCityCode" property="orgCityCode" jdbcType="VARCHAR"/>
+        <result column="orgCityName" property="orgCityName" jdbcType="VARCHAR"/>
+        <result column="orgDistCode" property="orgDistCode" jdbcType="VARCHAR"/>
+        <result column="orgDistName" property="orgDistName" jdbcType="VARCHAR"/>
+        <result column="orgCreatTime" property="orgCreatTime" jdbcType="TIMESTAMP"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="deleteFlag" property="deleteFlag" jdbcType="CHAR"/>
+        <result column="deleteTime" property="deleteTime" jdbcType="TIMESTAMP"/>
+        <result column="deleteUser" property="deleteUser" jdbcType="BIGINT"/>
+        <result column="orgNote" property="orgNote" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        orgId
+        ,
+        orgName,
+        parentOrgId,
+        industryClass,
+        orgType,
+        orgContact,
+        orgContactPhone,
+        address
+    </sql>
+
+    <sql id="queryCondition">
+        <if test="orgName != null and orgName !=''">AND username = #{username}</if>
+    </sql>
+
+
+    <!-- 若不需要自动返回主键，将useGeneratedKeys="true" keyProperty="id"去掉即可(当然如果不需要自动返回主键，直接用注解即可) -->
+    <!--  <insert id="insertUser" parameterType="User" useGeneratedKeys="false" keyProperty="userId" >
+          <![CDATA[
+          INSERT INTO user
+          (
+              username,
+              name,
+              age,
+              balance
+          )
+          VALUES
+          (
+              #{username, jdbcType=VARCHAR},
+              #{name, jdbcType=VARCHAR},
+              #{age, jdbcType=TINYINT},
+              #{balance, jdbcType=VARCHAR}
+          )
+          ]]>
+      </insert>-->
+
+    <!-- <select id="queryUserById" resultMap="result" parameterType="Long">
+         select * from userInfo
+         where userId = #{userId,jdbcType=BIGINT}
+         ###############
+         WHERE ID in
+   <foreach item="item" index="index" collection="list"
+       open="(" separator="," close=")">
+         #{item}
+   </foreach>
+         ##############
+         <![CDATA[ <= ]]>
+     </select>
+
+     <select id="queryAllUsers" resultMap="result">
+         select * from userInfo
+     </select>-->
+</mapper>

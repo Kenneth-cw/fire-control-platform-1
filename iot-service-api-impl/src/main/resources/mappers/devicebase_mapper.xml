@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shine.iot.service.api.impl.mapper.DeviceBaseInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <!-- <resultMap id="devBaseMap" type="com.shine.iot.entity.DeviceBaseInfoModel">
+         <id column="deviceId" property="deviceId" jdbcType="BIGINT"/>
+         &lt;!&ndash;<result column="orgName" property="orgName" jdbcType="VARCHAR"/>
+         <result column="orgNational" property="orgNational" jdbcType="VARCHAR"/>
+         <result column="parentOrgId" property="parentOrgId" jdbcType="BIGINT"/>
+         <result column="industryClass" property="userAge" jdbcType="VARCHAR"/>
+         <result column="orgType" property="orgType" jdbcType="VARCHAR"/>
+         <result column="orgCode" property="orgCode" jdbcType="VARCHAR"/>
+         <result column="regAddr" property="regAddr" jdbcType="VARCHAR"/>
+         <result column="officeAddr" property="officeAddr" jdbcType="VARCHAR"/>
+         <result column="orgContact" property="orgContact" jdbcType="VARCHAR"/>
+         <result column="orgContactPhone" property="orgContactPhone" jdbcType="VARCHAR"/>
+         <result column="orgPostCode" property="orgPostCode" jdbcType="VARCHAR"/>
+         <result column="orgLati" property="orgLati" jdbcType="VARCHAR"/>
+         <result column="orgLong" property="orgLong" jdbcType="VARCHAR"/>
+         <result column="addrProCode" property="addrProCode" jdbcType="VARCHAR"/>
+         <result column="orgProName" property="orgProName" jdbcType="VARCHAR"/>
+         <result column="orgCityCode" property="orgCityCode" jdbcType="VARCHAR"/>
+         <result column="orgCityName" property="orgCityName" jdbcType="VARCHAR"/>
+         <result column="orgDistCode" property="orgDistCode" jdbcType="VARCHAR"/>
+         <result column="orgDistName" property="orgDistName" jdbcType="VARCHAR"/>
+         <result column="orgCreatTime" property="orgCreatTime" jdbcType="TIMESTAMP"/>
+         <result column="address" property="address" jdbcType="VARCHAR"/>
+         <result column="deleteFlag" property="deleteFlag" jdbcType="CHAR"/>
+         <result column="deleteTime" property="deleteTime" jdbcType="TIMESTAMP"/>
+         <result column="deleteUser" property="deleteUser" jdbcType="BIGINT"/>
+         <result column="orgNote" property="orgNote" jdbcType="VARCHAR"/>&ndash;&gt;
+     </resultMap>-->
+
+    <sql id="queryCondition">
+        <if test="deviceId != null and deviceId !=''">AND deviceId = #{deviceId}</if>
+        <if test="deviceTypeCode != null and deviceTypeCode !=''">AND deviceTypeCode = #{deviceTypeCode}</if>
+        <if test="protocolType != null and protocolType !=''">AND protocolType = #{protocolType}</if>
+        <if test="deviceModelId != null and deviceModelId !=''">AND deviceModelId = #{deviceModelId}</if>
+        <if test="deviceNumber != null and deviceNumber !=''">AND deviceNumber = #{deviceNumber}</if>
+        <if test="devEUI != null and devEUI !=''">AND devEUI = #{devEUI}</if>
+        <if test="deviceSN != null and deviceSN !=''">AND deviceSN = #{deviceSN}</if>
+        <if test="deviceImeiCode != null and deviceImeiCode !=''">AND deviceImeiCode = #{deviceImeiCode}</if>
+        <if test="deviceSimNo != null and deviceSimNo !=''">AND deviceSimNo = #{deviceSimNo}</if>
+        <if test="deviceIccidCode != null and deviceIccidCode !=''">AND deviceIccidCode = #{deviceIccidCode}</if>
+        <if test="deviceQRCode != null and deviceQRCode !=''">AND deviceQRCode = #{deviceQRCode}</if>
+        <if test="mcuID != null and mcuID !=''">AND mcuID = #{mcuID}</if>
+        <if test="workState != null and workState !=''">AND workState = #{workState}</if>
+        <if test="deviceAddr != null and deviceAddr !=''">AND deviceAddr like concat('%',#{deviceAddr}, '%')</if>
+    </sql>
+
+    <select id="pageQueryAreaDevList" resultType="com.shine.iot.model.dto.OrgAreaDevInfoDto">
+        select devbase.deviceId, devbase.deviceTypeCode, devbase.deviceNumber, devbase.devEUI, devbase.deviceSN,
+        devbase.devEUI, devbase.workState, devbase.isValid,
+        area.areaID, area.areaName from devicebase devbase
+        inner join areadevicemapinfo areadevs on areadevs.deviceId = devbase.deviceId
+        inner join areainfo area on area.areaID = areadevs.areaId
+        <where>
+            <if test="device.deviceTypeCode != null and device.deviceTypeCode !=''">AND devbase.deviceTypeCode =
+                #{deviceTypeCode}
+            </if>
+            <if test="device.devEUI != null and device.devEUI !=''">AND devbase.devEUI = #{devEUI}</if>
+            <if test="device.workState != null and device.workState !=''">AND devbase.workState = #{workState}</if>
+            <if test="device.deviceAddr != null and device.deviceAddr !=''">AND devbase.deviceAddr like
+                concat('%',#{deviceAddr}, '%')
+            </if>
+            <if test="areaIds != null">
+                AND areadevs.areaId in
+                <foreach collection="areaIds" item="item_id" separator="," open=" (" close=")">
+                    #{item_id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

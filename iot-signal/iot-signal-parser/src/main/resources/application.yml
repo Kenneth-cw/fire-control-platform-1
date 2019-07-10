@@ -1,0 +1,47 @@
+server:
+  port: 8071
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: iot-signal-parser
+  main:
+    allow-bean-definition-overriding: true
+  #Cloud stream 结合kafka 组件消息队列
+  cloud:
+    stream:
+      kafka: #stream设置成使用kafka（springcloud默认提供了rabbitmq与kafka的实现）
+        binder:
+          brokers: 118.25.46.85:9092 #kafka的服务器列表
+          auto-create-topics: true
+          auto-add-partitions: true
+      #          producer-properties:
+
+      #配置自己定义的通道信息
+      bindings:
+        #自定义消息输入通道名称，接收TLV数据
+        input-augTLV:
+          content-type: application/json #内容类型转换，序列化方式
+          group: loraLiteGroup #消费者组，能保证消息只被一组服务实例处理一次
+          destination: AUG-TLV-LoraLite #消费主题
+          partitioned: true #开启消费分区
+        #自定义消息输出通道名称，存储TLV的payload数据
+        output_payload:
+          content-type: application/json #text/plain #application/x-java-serialized-object #application/json
+          destination: LoraLite-payload #loralite_payload_topic
+          producer:
+            partitionCount: 2 #指定的分区数量
+      instance-count: 1 #指定实例数量
+      instance-index: 1 #设置当前实例的索引值
+      default-binder: kafka #默认使用的binder为kafka
+
+#  kafka:
+#    consumer:
+#      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringSerializer
+
+logging:
+  level:
+    com.shine.iot.signal.parser: DEBUG
+  file: logs/iot-signal-parser.log

@@ -1,0 +1,31 @@
+1. Commit Changes 这里有几个选项需要了解的:
+
+    Auto-update after commit :自动升级后提交
+
+    keep files locked :把文件锁上，我想这应该就只能你修改其他开发人不能修改不了的功能
+
+    在你提交之前：before commit
+
+    Reformat code:重新格式化代码
+
+    Rearrange code:重新整理代码
+
+    Optimize imports：优化导入
+
+    Perform code analysis：执行代码分析[ 默认选择]
+
+    Check TODO(show all)：检测需要修改的代码[显示所有默认选择]
+
+    clean up: 清除所有
+
+    Update copyright:更新版权
+
+2. 在Commit Message 添加修改信息
+3. 代码冲突的解决：
+    在使用SVN更新服务器上的代码时，有时会弹出代码冲突的对话框，问你是否进行合并。
+    并提供了三种合并方案：accept yours(使用你的)、accept theirs(使用别人的)和merge(合并)；
+    当你选择merge合并时，会弹出代码合并对照窗口，一共有三个屏：
+        左右两侧时你和服务器不同的代码并高亮显示不同的部分，带有箭头和叉号，通过点击箭头将两边冲突的代码添加到中间的合并区域中去，
+        点击叉号则辨识放弃那一段代码，待所有冲突处理完成后merge就成功了。
+
+

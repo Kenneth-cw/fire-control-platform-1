@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.shine</groupId>
+        <artifactId>fire-control-platform</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+        <!--<groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath/>-->
+    </parent>
+    <groupId>com.shine</groupId>
+    <artifactId>iot-signal</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>iot-signal</name>
+    <packaging>pom</packaging>
+    <description>fire platform signal processing parent module</description>
+
+    <modules>
+        <module>iot-signal-monitor</module>
+        <module>iot-signal-parser</module>
+        <module>iot-signal-reader</module>
+        <module>iot-signal-service</module>
+        <module>iot-signal-model</module>
+        <module>iot-signal-util</module>
+        <module>iot-signal-db-rest</module>
+    </modules>
+
+    <!-- 集中定义依赖版本号 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <!-- 信号处理模块的版本 -->
+        <fire-signal.version>0.0.1-SNAPSHOT</fire-signal.version>
+
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <mysql.version>8.0.16</mysql.version>
+        <apache-httpclient.version>4.5.9</apache-httpclient.version>
+        <openfeign-httpclient.version>10.1.0</openfeign-httpclient.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commos-codec.version>1.11</commos-codec.version>
+        <systemConfig.version>1.1-SNAPSHOT</systemConfig.version>
+        <inject.version>1</inject.version>
+        <org-quartz.version>2.3.1</org-quartz.version>
+    </properties>
+
+    <dependencies>
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter</artifactId>
+         </dependency>
+
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-test</artifactId>
+             <scope>test</scope>
+         </dependency>-->
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- commons lang3 工具类 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- Hex 16进制数据 处理jar -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commos-codec.version}</version>
+            </dependency>
+            <!-- system Config 数据封装类 -->
+            <dependency>
+                <groupId>system.common.systemConfig</groupId>
+                <artifactId>systemConfig</artifactId>
+                <version>${systemConfig.version}</version>
+            </dependency>
+            <!-- 定时器 quartz -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${org-quartz.version}</version>
+            </dependency>
+            <!-- Singleton 单例 -->
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${inject.version}</version>
+            </dependency>
+            <!-- apache httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache-httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>${openfeign-httpclient.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

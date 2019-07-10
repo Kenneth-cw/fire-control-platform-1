@@ -1,0 +1,1168 @@
+2019-07-04 09:14:28.037  INFO 9580 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:14:29.023  WARN 9580 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:14:29.026  INFO 9580 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:14:29.929  INFO 9580 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=41d0089c-028d-3784-8829-3c6b260d24e2
+2019-07-04 09:14:30.000  INFO 9580 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ff8f3132] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:14:30.473  INFO 9580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:14:30.499  INFO 9580 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:14:30.500  INFO 9580 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:14:30.657  INFO 9580 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:14:30.658  INFO 9580 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1609 ms
+2019-07-04 09:14:31.007  WARN 9580 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:14:31.031  WARN 9580 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orgBaseRestController': Unsatisfied dependency expressed through method 'setOrgBaseFeignService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.shine.iot.service.web.feignClient.OrgBaseFeignClient': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?
+2019-07-04 09:14:31.034  INFO 9580 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-07-04 09:14:31.047  INFO 9580 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-04 09:14:31.061 ERROR 9580 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orgBaseRestController': Unsatisfied dependency expressed through method 'setOrgBaseFeignService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.shine.iot.service.web.feignClient.OrgBaseFeignClient': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:676) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at com.shine.iot.service.web.IotServiceWebApplication.main(IotServiceWebApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.shine.iot.service.web.feignClient.OrgBaseFeignClient': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:178) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1674) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1249) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:257) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1471) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1428) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1211) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1168) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:668) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon?
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.loadBalance(FeignClientFactoryBean.java:241) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getTarget(FeignClientFactoryBean.java:267) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:247) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:171) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 35 common frames omitted
+
+2019-07-04 09:17:10.606  INFO 28576 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:17:10.788  WARN 28576 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:17:10.792  INFO 28576 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:17:11.743  INFO 28576 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9ebd75f0-ead0-36dd-9e4e-91e5c6781388
+2019-07-04 09:17:11.821  INFO 28576 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e07593c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:17:12.313  INFO 28576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:17:12.341  INFO 28576 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:17:12.341  INFO 28576 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:17:12.509  INFO 28576 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:17:12.510  INFO 28576 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1699 ms
+2019-07-04 09:17:12.922  WARN 28576 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:17:13.026  WARN 28576 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:17:13.027  INFO 28576 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:17:13.032  WARN 28576 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:17:13.032  INFO 28576 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:17:13.205  INFO 28576 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:17:14.028  INFO 28576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 09:17:14.031  INFO 28576 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 5.455 seconds (JVM running for 7.883)
+2019-07-04 09:25:33.060  INFO 28576 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 09:25:33.061  INFO 28576 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 09:25:33.073  INFO 28576 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-07-04 09:25:34.402  INFO 28576 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:25:34.467  INFO 28576 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 09:25:34.482  INFO 28576 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 09:25:34.487  INFO 28576 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:com.netflix.loadbalancer.ConfigurationBasedServerList@718b291b
+2019-07-04 09:25:34.562 DEBUG 28576 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 09:29:48.459  INFO 21284 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:29:48.701  WARN 21284 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:29:48.703  INFO 21284 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:29:49.704  INFO 21284 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=eabdfe92-b133-38db-b6a7-ffcaa43be796
+2019-07-04 09:29:49.791  INFO 21284 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ff1ce439] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:29:50.299  INFO 21284 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:29:50.328  INFO 21284 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:29:50.328  INFO 21284 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:29:50.639  INFO 21284 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:29:50.640  INFO 21284 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1906 ms
+2019-07-04 09:29:50.870  WARN 21284 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:29:51.022  WARN 21284 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:29:51.022  INFO 21284 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:29:51.029  WARN 21284 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:29:51.029  INFO 21284 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:29:51.207  INFO 21284 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:29:51.521  WARN 21284 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$8540f509]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+2019-07-04 09:29:51.522  INFO 21284 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:29:51.528  INFO 21284 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-07-04 09:29:51.542  INFO 21284 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-04 09:29:51.553 ERROR 21284 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$8540f509]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at com.shine.iot.service.web.IotServiceWebApplication.main(IotServiceWebApplication.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$8540f509]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration.<init>(EurekaDiscoveryClientConfiguration.java:60) ~[spring-cloud-netflix-eureka-client-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$8540f509.<init>(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_161]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_161]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.actuate.health.OrderedHealthAggregator
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_161]
+	... 31 common frames omitted
+
+2019-07-04 09:38:12.140  INFO 26276 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:38:12.332  WARN 26276 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:38:12.335  INFO 26276 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:38:13.537  INFO 26276 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44993137-d652-30c8-8b9b-9297ae8f330b
+2019-07-04 09:38:13.659  INFO 26276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ad67b607] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:38:14.465  INFO 26276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:38:14.499  INFO 26276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:38:14.499  INFO 26276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:38:14.663  INFO 26276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:38:14.663  INFO 26276 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2300 ms
+2019-07-04 09:38:14.939  WARN 26276 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:38:15.201  WARN 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:38:15.202  INFO 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:38:15.208  WARN 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:38:15.208  INFO 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:38:15.459  INFO 26276 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:38:15.886  WARN 26276 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$338bc6d7]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+2019-07-04 09:38:15.887  INFO 26276 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:38:15.906  WARN 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:38:15.906  INFO 26276 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:38:15.912  INFO 26276 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-07-04 09:38:15.928  INFO 26276 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-04 09:38:15.942 ERROR 26276 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$338bc6d7]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1303) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at com.shine.iot.service.web.IotServiceWebApplication.main(IotServiceWebApplication.java:17) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$338bc6d7]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1295) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/actuate/health/OrderedHealthAggregator
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration.<init>(EurekaDiscoveryClientConfiguration.java:60) ~[spring-cloud-netflix-eureka-client-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaHealthCheckHandlerConfiguration$$EnhancerBySpringCGLIB$$338bc6d7.<init>(<generated>) ~[spring-cloud-netflix-eureka-client-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_161]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_161]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.actuate.health.OrderedHealthAggregator
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_161]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338) ~[na:1.8.0_161]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_161]
+	... 31 common frames omitted
+
+2019-07-04 09:39:40.224  INFO 26656 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:39:40.776  WARN 26656 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:39:40.779  INFO 26656 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:39:41.817  INFO 26656 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd58e566-8262-339b-a8f8-8940bdc51b8c
+2019-07-04 09:39:41.941  INFO 26656 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3bc1318f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:39:42.740  INFO 26656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:39:42.768  INFO 26656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:39:42.769  INFO 26656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:39:42.931  INFO 26656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:39:42.931  INFO 26656 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2127 ms
+2019-07-04 09:39:43.204  WARN 26656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:39:43.384  WARN 26656 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:39:43.384  INFO 26656 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:39:43.390  WARN 26656 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:39:43.390  INFO 26656 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:39:43.617  INFO 26656 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:39:44.707  INFO 26656 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 09:39:44.764  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 09:39:45.105  INFO 26656 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 09:39:45.106  INFO 26656 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 09:39:45.262  INFO 26656 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 09:39:45.262  INFO 26656 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 09:39:45.587  INFO 26656 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 09:39:45.848  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 09:39:45.848  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 09:39:45.849  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 09:39:45.849  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 09:39:45.849  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 09:39:45.849  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 09:39:45.849  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 09:39:46.071  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 09:39:46.076  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 09:39:46.079  INFO 26656 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 09:39:46.086  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562204386083 with initial instances count: 6
+2019-07-04 09:39:46.091  INFO 26656 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 09:39:46.092  INFO 26656 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562204386092, current=UP, previous=STARTING]
+2019-07-04 09:39:46.096  INFO 26656 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 09:39:46.169  INFO 26656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 09:39:46.170  INFO 26656 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 09:39:46.173  INFO 26656 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.702 seconds (JVM running for 11.102)
+2019-07-04 09:39:46.184  INFO 26656 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 09:40:03.182  INFO 26656 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 09:40:03.183  INFO 26656 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 09:40:03.194  INFO 26656 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-07-04 09:40:03.686  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:40:03.723  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 09:40:03.724  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 09:40:03.731  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 09:40:03.830  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:40:03.832  INFO 26656 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[192.168.2.101:8097, 172.17.0.17:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3b9c62d1
+2019-07-04 09:40:04.736  INFO 26656 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:48:42.650  INFO 8552 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:48:43.066  WARN 8552 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:48:43.068  INFO 8552 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:48:44.232  INFO 8552 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7778874d-927d-38cc-ad75-4a8c14e9d6b6
+2019-07-04 09:48:44.392  INFO 8552 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fd12219a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:48:45.459  INFO 8552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:48:45.498  INFO 8552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:48:45.499  INFO 8552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:48:45.725  INFO 8552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:48:45.726  INFO 8552 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2620 ms
+2019-07-04 09:48:46.101  WARN 8552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:48:46.359  WARN 8552 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:48:46.359  INFO 8552 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:48:46.367  WARN 8552 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:48:46.369  INFO 8552 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:48:46.616  INFO 8552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:48:47.735  INFO 8552 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 09:48:47.790  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 09:48:48.123  INFO 8552 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 09:48:48.123  INFO 8552 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 09:48:48.282  INFO 8552 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 09:48:48.283  INFO 8552 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 09:48:48.577  INFO 8552 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 09:48:48.712  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 09:48:48.713  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 09:48:48.942  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 09:48:48.949  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 09:48:48.952  INFO 8552 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 09:48:48.957  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562204928956 with initial instances count: 7
+2019-07-04 09:48:48.961  INFO 8552 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 09:48:48.961  INFO 8552 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562204928961, current=UP, previous=STARTING]
+2019-07-04 09:48:48.966  INFO 8552 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 09:48:49.106  INFO 8552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 09:48:49.107  INFO 8552 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 09:48:49.109  INFO 8552 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.637 seconds (JVM running for 11.444)
+2019-07-04 09:48:49.116  INFO 8552 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 09:48:57.265  INFO 8552 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 09:48:57.265  INFO 8552 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 09:48:57.280  INFO 8552 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-07-04 09:48:57.874  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:48:57.911  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 09:48:57.912  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 09:48:57.922  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 09:48:57.951  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:48:57.953  INFO 8552 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[192.168.2.101:8097, 172.17.0.17:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@9edd7c6
+2019-07-04 09:48:58.928  INFO 8552 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:49:07.147 DEBUG 8552 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 09:49:19.344 DEBUG 8552 --- [HystrixTimer-2] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 09:49:23.094 DEBUG 8552 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 09:49:40.541 DEBUG 8552 --- [HystrixTimer-3] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 09:50:44.484  INFO 32560 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:50:44.663  WARN 32560 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:50:44.667  INFO 32560 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:50:45.834  INFO 32560 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7778874d-927d-38cc-ad75-4a8c14e9d6b6
+2019-07-04 09:50:45.961  INFO 32560 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$11ed3a70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:50:46.772  INFO 32560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:50:46.799  INFO 32560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:50:46.800  INFO 32560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:50:46.968  INFO 32560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:50:46.968  INFO 32560 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2249 ms
+2019-07-04 09:50:47.235  WARN 32560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:50:47.466  WARN 32560 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:50:47.466  INFO 32560 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:50:47.480  WARN 32560 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:50:47.480  INFO 32560 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:50:47.778  INFO 32560 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:50:48.975  INFO 32560 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 09:50:49.062  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 09:50:49.555  INFO 32560 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 09:50:49.555  INFO 32560 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 09:50:49.783  INFO 32560 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 09:50:49.783  INFO 32560 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 09:50:50.121  INFO 32560 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 09:50:50.286  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 09:50:50.287  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 09:50:50.603  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 09:50:50.609  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 09:50:50.613  INFO 32560 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 09:50:50.619  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562205050617 with initial instances count: 7
+2019-07-04 09:50:50.624  INFO 32560 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 09:50:50.624  INFO 32560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562205050624, current=UP, previous=STARTING]
+2019-07-04 09:50:50.627  INFO 32560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 09:50:50.692  INFO 32560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 09:50:50.694  INFO 32560 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 09:50:50.696  INFO 32560 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.999 seconds (JVM running for 11.966)
+2019-07-04 09:50:50.773  INFO 32560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 09:50:55.613  INFO 32560 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 09:50:55.613  INFO 32560 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 09:50:55.629  INFO 32560 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-07-04 09:50:56.176  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:50:56.215  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 09:50:56.216  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 09:50:56.222  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 09:50:56.251  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:50:56.252  INFO 32560 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@36d5f395
+2019-07-04 09:50:56.994 ERROR 32560 --- [http-nio-8098-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: OrgBaseFeignClient#getOne(Long) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 09:50:57.227  INFO 32560 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:51:41.569 ERROR 32560 --- [http-nio-8098-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: OrgBaseFeignClient#getOne(Long) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 09:51:55.278 ERROR 32560 --- [http-nio-8098-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: OrgBaseFeignClient#getOne(Long) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 09:55:50.291  INFO 32560 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 09:57:23.065  INFO 3660 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 09:57:23.233  WARN 3660 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 09:57:23.235  INFO 3660 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 09:57:24.280  INFO 3660 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 09:57:24.400  INFO 3660 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5df6ca33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 09:57:25.159  INFO 3660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 09:57:25.187  INFO 3660 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 09:57:25.187  INFO 3660 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 09:57:25.349  INFO 3660 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 09:57:25.350  INFO 3660 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2085 ms
+2019-07-04 09:57:25.628  WARN 3660 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 09:57:26.159  WARN 3660 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:57:26.159  INFO 3660 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:57:26.166  WARN 3660 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 09:57:26.166  INFO 3660 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 09:57:26.394  INFO 3660 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 09:57:27.472  INFO 3660 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 09:57:27.528  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 09:57:27.602  INFO 3660 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 09:57:27.603  INFO 3660 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 09:57:27.774  INFO 3660 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 09:57:27.775  INFO 3660 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 09:57:28.104  INFO 3660 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 09:57:28.235  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 09:57:28.236  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 09:57:28.431  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 09:57:28.435  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 09:57:28.439  INFO 3660 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 09:57:28.444  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562205448442 with initial instances count: 7
+2019-07-04 09:57:28.448  INFO 3660 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 09:57:28.448  INFO 3660 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562205448448, current=UP, previous=STARTING]
+2019-07-04 09:57:28.450  INFO 3660 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 09:57:28.510  INFO 3660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 09:57:28.511  INFO 3660 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 09:57:28.514  INFO 3660 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 7.984 seconds (JVM running for 10.907)
+2019-07-04 09:57:28.516  INFO 3660 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 09:57:34.070  INFO 3660 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 09:57:34.070  INFO 3660 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 09:57:34.085  INFO 3660 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-07-04 09:57:34.652  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:57:34.694  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 09:57:34.696  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 09:57:34.704  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 09:57:34.735  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:57:34.737  INFO 3660 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[192.168.2.101:8097, 172.17.0.17:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2da5bd1d
+2019-07-04 09:57:35.711  INFO 3660 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 09:57:49.033 ERROR 3660 --- [http-nio-8098-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: OrgBaseFeignClient#getOne(Long) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 10:02:28.244  INFO 3660 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:07:28.247  INFO 3660 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:12:28.251  INFO 3660 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:12:43.580  INFO 30244 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:12:43.758  WARN 30244 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:12:43.761  INFO 30244 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:12:44.903  INFO 30244 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:12:45.035  INFO 30244 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4d544265] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:12:45.830  INFO 30244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:12:45.859  INFO 30244 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:12:45.859  INFO 30244 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:12:46.027  INFO 30244 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:12:46.028  INFO 30244 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2243 ms
+2019-07-04 10:12:46.292  WARN 30244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:12:46.831  WARN 30244 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:12:46.832  INFO 30244 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:12:46.838  WARN 30244 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:12:46.838  INFO 30244 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:12:47.079  INFO 30244 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:12:48.168  INFO 30244 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:12:48.222  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:12:48.291  INFO 30244 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:12:48.291  INFO 30244 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:12:48.459  INFO 30244 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:12:48.459  INFO 30244 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:12:48.755  INFO 30244 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:12:48.888  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:12:48.889  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:12:49.090  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:12:49.095  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:12:49.098  INFO 30244 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:12:49.103  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562206369101 with initial instances count: 7
+2019-07-04 10:12:49.106  INFO 30244 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:12:49.107  INFO 30244 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562206369107, current=UP, previous=STARTING]
+2019-07-04 10:12:49.111  INFO 30244 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:12:49.169  INFO 30244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:12:49.170  INFO 30244 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:12:49.172  INFO 30244 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.683 seconds (JVM running for 10.741)
+2019-07-04 10:12:49.175  INFO 30244 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:12:54.187  INFO 30244 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:12:54.188  INFO 30244 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:12:54.204  INFO 30244 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-07-04 10:12:54.749  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:12:54.789  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:12:54.790  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:12:54.797  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:12:54.824  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:12:54.826  INFO 30244 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@335aaab5
+2019-07-04 10:12:55.563 DEBUG 30244 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:12:55.802  INFO 30244 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:14:10.272 DEBUG 30244 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:15:58.041 DEBUG 30244 --- [HystrixTimer-2] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:16:20.599  INFO 13668 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:16:20.746  WARN 13668 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:16:20.749  INFO 13668 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:16:21.786  INFO 13668 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:16:21.910  INFO 13668 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a96444ad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:16:22.699  INFO 13668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:16:22.730  INFO 13668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:16:22.731  INFO 13668 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:16:22.893  INFO 13668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:16:22.893  INFO 13668 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2111 ms
+2019-07-04 10:16:23.166  WARN 13668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:16:23.699  WARN 13668 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:16:23.700  INFO 13668 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:16:23.705  WARN 13668 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:16:23.705  INFO 13668 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:16:23.931  INFO 13668 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:16:25.043  INFO 13668 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:16:25.098  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:16:25.173  INFO 13668 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:16:25.174  INFO 13668 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:16:25.352  INFO 13668 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:16:25.352  INFO 13668 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:16:25.636  INFO 13668 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:16:25.781  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:16:25.782  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:16:26.043  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:16:26.047  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:16:26.051  INFO 13668 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:16:26.056  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562206586054 with initial instances count: 7
+2019-07-04 10:16:26.060  INFO 13668 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:16:26.061  INFO 13668 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562206586061, current=UP, previous=STARTING]
+2019-07-04 10:16:26.064  INFO 13668 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:16:26.128  INFO 13668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:16:26.129  INFO 13668 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:16:26.131  INFO 13668 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 7.55 seconds (JVM running for 10.016)
+2019-07-04 10:16:26.133  INFO 13668 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:16:30.783  INFO 13668 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:16:30.784  INFO 13668 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:16:30.796  INFO 13668 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-07-04 10:16:31.316  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:16:31.361  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:16:31.362  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:16:31.369  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:16:31.401  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:16:31.403  INFO 13668 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[192.168.2.101:8097, 172.17.0.17:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@738ea558
+2019-07-04 10:16:32.377  INFO 13668 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:16:45.075 DEBUG 13668 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:18:30.592  INFO 26056 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:18:30.771  WARN 26056 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:18:30.773  INFO 26056 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:18:31.865  INFO 26056 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:18:31.983  INFO 26056 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3bac626f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:18:32.790  INFO 26056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:18:32.815  INFO 26056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:18:32.816  INFO 26056 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:18:32.984  INFO 26056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:18:32.984  INFO 26056 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2174 ms
+2019-07-04 10:18:33.261  WARN 26056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:18:33.826  WARN 26056 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:18:33.827  INFO 26056 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:18:33.859  WARN 26056 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:18:33.859  INFO 26056 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:18:34.128  INFO 26056 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:18:35.203  INFO 26056 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:18:35.263  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:18:35.335  INFO 26056 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:18:35.336  INFO 26056 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:18:35.511  INFO 26056 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:18:35.511  INFO 26056 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:18:35.803  INFO 26056 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:18:35.947  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:18:36.158  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:18:36.163  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:18:36.166  INFO 26056 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:18:36.171  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562206716169 with initial instances count: 7
+2019-07-04 10:18:36.174  INFO 26056 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:18:36.175  INFO 26056 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562206716175, current=UP, previous=STARTING]
+2019-07-04 10:18:36.178  INFO 26056 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:18:36.237  INFO 26056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:18:36.238  INFO 26056 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:18:36.240  INFO 26056 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 7.792 seconds (JVM running for 10.36)
+2019-07-04 10:18:36.244  INFO 26056 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:18:40.055  INFO 26056 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:18:40.056  INFO 26056 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:18:40.067  INFO 26056 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-07-04 10:18:40.312  INFO 26056 --- [http-nio-8098-exec-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:18:40.356  INFO 26056 --- [http-nio-8098-exec-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:18:40.358  INFO 26056 --- [http-nio-8098-exec-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:18:40.366  INFO 26056 --- [http-nio-8098-exec-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:18:40.398  INFO 26056 --- [http-nio-8098-exec-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:18:40.401  INFO 26056 --- [http-nio-8098-exec-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@374b06c6
+2019-07-04 10:18:41.373  INFO 26056 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:18:50.526 ERROR 26056 --- [http-nio-8098-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Connect to 172.17.0.17:8097 [/172.17.0.17] failed: connect timed out executing GET http://iot-service-api-impl/org-base-data/org/21] with root cause
+
+java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_161]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_161]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_161]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_161]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_161]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_161]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_161]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108) ~[httpclient-4.5.9.jar:4.5.9]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.9.jar:4.5.9]
+	at feign.httpclient.ApacheHttpClient.execute(ApacheHttpClient.java:85) ~[feign-httpclient-10.1.0.jar:na]
+	at org.springframework.cloud.openfeign.ribbon.FeignLoadBalancer.execute(FeignLoadBalancer.java:93) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.cloud.openfeign.ribbon.FeignLoadBalancer.execute(FeignLoadBalancer.java:56) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.netflix.client.AbstractLoadBalancerAwareClient$1.call(AbstractLoadBalancerAwareClient.java:104) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:303) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:287) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:231) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:228) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.drain(OnSubscribeConcatMap.java:286) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.onNext(OnSubscribeConcatMap.java:144) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:185) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10423) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.subscribe(Observable.java:10390) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112) ~[ribbon-loadbalancer-2.3.0.jar:2.3.0]
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:83) ~[spring-cloud-openfeign-core-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:108) ~[feign-core-10.1.0.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:78) ~[feign-core-10.1.0.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:103) ~[feign-core-10.1.0.jar:na]
+	at com.sun.proxy.$Proxy101.getOne(Unknown Source) ~[na:na]
+	at com.shine.iot.service.web.rest.OrgBaseRestController.getOneById(OrgBaseRestController.java:30) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.19.jar:9.0.19]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 10:23:35.953  INFO 17324 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:23:36.375  WARN 17324 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:23:36.379  INFO 17324 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:23:37.587  INFO 17324 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:23:37.701  INFO 17324 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6a52faab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:23:38.471  INFO 17324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:23:38.500  INFO 17324 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:23:38.500  INFO 17324 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:23:38.668  INFO 17324 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:23:38.668  INFO 17324 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2246 ms
+2019-07-04 10:23:38.954  WARN 17324 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:23:39.517  WARN 17324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:23:39.517  INFO 17324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:23:39.522  WARN 17324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:23:39.522  INFO 17324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:23:39.751  INFO 17324 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:23:40.855  INFO 17324 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:23:40.911  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:23:40.985  INFO 17324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:23:40.985  INFO 17324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:23:41.154  INFO 17324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:23:41.154  INFO 17324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:23:41.494  INFO 17324 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:23:41.640  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:23:41.640  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:23:41.640  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:23:41.640  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:23:41.641  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:23:41.641  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:23:41.641  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:23:41.857  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:23:41.861  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:23:41.865  INFO 17324 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:23:41.871  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562207021869 with initial instances count: 7
+2019-07-04 10:23:41.875  INFO 17324 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:23:41.875  INFO 17324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562207021875, current=UP, previous=STARTING]
+2019-07-04 10:23:41.879  INFO 17324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:23:41.948  INFO 17324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:23:41.950  INFO 17324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:23:41.950  INFO 17324 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:23:41.953  INFO 17324 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.419 seconds (JVM running for 11.123)
+2019-07-04 10:23:45.413  INFO 17324 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:23:45.413  INFO 17324 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:23:45.424  INFO 17324 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-07-04 10:23:45.895  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:23:45.935  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:23:45.936  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:23:45.943  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:23:45.980  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:23:45.982  INFO 17324 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3ee89f7e
+2019-07-04 10:23:46.690 DEBUG 17324 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:23:46.948  INFO 17324 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:24:00.706 DEBUG 17324 --- [HystrixTimer-2] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:24:15.928 DEBUG 17324 --- [HystrixTimer-3] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:27:07.489  INFO 3460 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:27:07.753  WARN 3460 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:27:07.755  INFO 3460 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:27:08.839  INFO 3460 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:27:08.972  INFO 3460 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4ee22e91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:27:09.752  INFO 3460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:27:09.779  INFO 3460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:27:09.779  INFO 3460 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:27:09.951  INFO 3460 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:27:09.951  INFO 3460 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2174 ms
+2019-07-04 10:27:10.232  WARN 3460 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:27:10.791  WARN 3460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:27:10.792  INFO 3460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:27:10.798  WARN 3460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:27:10.798  INFO 3460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:27:11.033  INFO 3460 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:27:12.156  INFO 3460 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:27:12.211  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:27:12.283  INFO 3460 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:27:12.283  INFO 3460 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:27:12.459  INFO 3460 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:27:12.460  INFO 3460 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:27:12.767  INFO 3460 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:27:12.919  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:27:13.162  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:27:13.168  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:27:13.171  INFO 3460 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:27:13.176  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562207233174 with initial instances count: 7
+2019-07-04 10:27:13.180  INFO 3460 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:27:13.181  INFO 3460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562207233181, current=UP, previous=STARTING]
+2019-07-04 10:27:13.184  INFO 3460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:27:13.246  INFO 3460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:27:13.247  INFO 3460 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:27:13.250  INFO 3460 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 7.787 seconds (JVM running for 10.379)
+2019-07-04 10:27:13.255  INFO 3460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:27:24.756  INFO 3460 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:27:24.757  INFO 3460 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:27:24.770  INFO 3460 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-07-04 10:27:25.330  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:27:25.376  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:27:25.377  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:27:25.385  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:27:25.419  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:27:25.421  INFO 3460 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@71b85aff
+2019-07-04 10:27:26.148 DEBUG 3460 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:27:26.391  INFO 3460 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:32:12.947  INFO 3460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:37:12.950  INFO 3460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:42:12.953  INFO 3460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:47:12.954  INFO 3460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:51:00.043  INFO 25112 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 10:51:00.514  WARN 25112 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 10:51:00.517  INFO 25112 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 10:51:01.838  INFO 25112 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=37b1e476-f4c3-37fc-9f33-385d6a0a4acf
+2019-07-04 10:51:01.953  INFO 25112 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$98b07bb3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 10:51:03.446  INFO 25112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 10:51:03.477  INFO 25112 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 10:51:03.478  INFO 25112 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 10:51:04.384  INFO 25112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 10:51:04.385  INFO 25112 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3844 ms
+2019-07-04 10:51:04.668  WARN 25112 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 10:51:05.626  WARN 25112 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:51:05.627  INFO 25112 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:51:05.638  WARN 25112 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 10:51:05.639  INFO 25112 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 10:51:05.884  INFO 25112 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 10:51:07.089  INFO 25112 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 10:51:07.152  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 10:51:07.222  INFO 25112 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 10:51:07.222  INFO 25112 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 10:51:07.415  INFO 25112 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 10:51:07.415  INFO 25112 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 10:51:07.697  INFO 25112 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 10:51:07.834  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 10:51:08.097  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 10:51:08.102  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 10:51:08.106  INFO 25112 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 10:51:08.112  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562208668111 with initial instances count: 7
+2019-07-04 10:51:08.116  INFO 25112 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 10:51:08.117  INFO 25112 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562208668117, current=UP, previous=STARTING]
+2019-07-04 10:51:08.121  INFO 25112 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 10:51:08.178  INFO 25112 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 10:51:08.180  INFO 25112 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 10:51:08.182  INFO 25112 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 10.001 seconds (JVM running for 13.039)
+2019-07-04 10:51:08.190  INFO 25112 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 10:52:50.629  INFO 25112 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 10:52:50.629  INFO 25112 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 10:52:50.645  INFO 25112 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-07-04 10:52:51.389  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:52:51.526  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-service-api-impl
+2019-07-04 10:52:51.527  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-service-api-impl instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 10:52:51.535  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 10:52:51.601  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:52:51.603  INFO 25112 --- [hystrix-iot-service-api-impl-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-service-api-impl initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-service-api-impl,current list of Servers=[172.17.0.17:8097, 192.168.2.101:8097],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:2;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:172.17.0.17:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:192.168.2.101:8097;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2e74f80e
+2019-07-04 10:52:51.989 DEBUG 25112 --- [HystrixTimer-1] c.s.i.s.w.h.OrgBaseFeignClientFallback   : 请求超时...
+2019-07-04 10:52:52.544  INFO 25112 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-service-api-impl.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 10:56:07.839  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:01:07.842  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:06:07.845  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:11:07.848  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:16:07.852  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:21:07.865  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:26:07.867  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:31:07.870  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:36:07.872  INFO 25112 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:39:30.701  INFO 26084 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 11:39:31.651  WARN 26084 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 11:39:31.655  INFO 26084 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 11:39:32.935  INFO 26084 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=19f1d42d-264c-3f91-a9f9-6f39fad87338
+2019-07-04 11:39:33.110  INFO 26084 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6720f6d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 11:39:34.085  INFO 26084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 11:39:34.128  INFO 26084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 11:39:34.128  INFO 26084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 11:39:34.327  INFO 26084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 11:39:34.328  INFO 26084 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2636 ms
+2019-07-04 11:39:34.710  WARN 26084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 11:39:35.317  WARN 26084 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 11:39:35.317  INFO 26084 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 11:39:35.323  WARN 26084 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 11:39:35.323  INFO 26084 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 11:39:35.575  INFO 26084 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 11:39:36.730  INFO 26084 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 11:39:36.814  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 11:39:36.889  INFO 26084 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 11:39:36.889  INFO 26084 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 11:39:37.102  INFO 26084 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 11:39:37.102  INFO 26084 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 11:39:37.404  INFO 26084 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 11:39:37.565  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 11:39:37.831  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 11:39:37.836  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 11:39:37.840  INFO 26084 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 11:39:37.846  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562211577844 with initial instances count: 7
+2019-07-04 11:39:37.850  INFO 26084 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 11:39:37.850  INFO 26084 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562211577850, current=UP, previous=STARTING]
+2019-07-04 11:39:37.853  INFO 26084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 11:39:37.915  INFO 26084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 11:39:37.916  INFO 26084 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 11:39:37.920  INFO 26084 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 9.948 seconds (JVM running for 13.062)
+2019-07-04 11:39:38.905  INFO 26084 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 11:40:24.139  INFO 26084 --- [http-nio-8098-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 11:40:24.139  INFO 26084 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 11:40:24.153  INFO 26084 --- [http-nio-8098-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-07-04 11:40:24.723  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 11:40:24.760  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-signal-db-rest
+2019-07-04 11:40:24.761  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-signal-db-rest instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-signal-db-rest,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 11:40:24.768  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 11:40:24.795  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 11:40:24.796  INFO 26084 --- [hystrix-iot-signal-db-rest-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-signal-db-rest initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-signal-db-rest,current list of Servers=[192.168.2.101:8075],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.101:8075;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@78e29ef8
+2019-07-04 11:40:25.549 ERROR 26084 --- [http-nio-8098-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: TestFeignClient#testQuery(String) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 11:40:25.774  INFO 26084 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 11:44:37.567  INFO 26084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:49:37.569  INFO 26084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:51:14.641  INFO 31820 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-07-04 11:51:15.043  WARN 31820 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: 503 null
+2019-07-04 11:51:15.045  INFO 31820 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : No active profile set, falling back to default profiles: default
+2019-07-04 11:51:16.181  INFO 31820 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=19f1d42d-264c-3f91-a9f9-6f39fad87338
+2019-07-04 11:51:16.306  INFO 31820 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1357516a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-04 11:51:17.095  INFO 31820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8098 (http)
+2019-07-04 11:51:17.125  INFO 31820 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-04 11:51:17.126  INFO 31820 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-07-04 11:51:17.298  INFO 31820 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-04 11:51:17.298  INFO 31820 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2232 ms
+2019-07-04 11:51:17.593  WARN 31820 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-07-04 11:51:18.175  WARN 31820 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 11:51:18.175  INFO 31820 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 11:51:18.183  WARN 31820 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-04 11:51:18.183  INFO 31820 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-04 11:51:18.428  INFO 31820 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-04 11:51:19.556  INFO 31820 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-04 11:51:19.614  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-07-04 11:51:19.689  INFO 31820 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-07-04 11:51:19.689  INFO 31820 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-07-04 11:51:19.854  INFO 31820 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-07-04 11:51:19.854  INFO 31820 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-07-04 11:51:20.142  INFO 31820 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-04 11:51:20.281  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-07-04 11:51:20.282  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-07-04 11:51:20.548  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-07-04 11:51:20.553  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-07-04 11:51:20.557  INFO 31820 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-07-04 11:51:20.562  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1562212280561 with initial instances count: 7
+2019-07-04 11:51:20.566  INFO 31820 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application IOT-SERVICE-WEB with eureka with status UP
+2019-07-04 11:51:20.566  INFO 31820 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562212280566, current=UP, previous=STARTING]
+2019-07-04 11:51:20.569  INFO 31820 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098: registering service...
+2019-07-04 11:51:20.627  INFO 31820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8098 (http) with context path ''
+2019-07-04 11:51:20.628  INFO 31820 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8098
+2019-07-04 11:51:20.630  INFO 31820 --- [restartedMain] c.s.i.s.web.IotServiceWebApplication     : Started IotServiceWebApplication in 8.153 seconds (JVM running for 10.685)
+2019-07-04 11:51:20.634  INFO 31820 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_IOT-SERVICE-WEB/JAVA2:iot-service-web:8098 - registration status: 204
+2019-07-04 11:51:43.382  INFO 31820 --- [http-nio-8098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-04 11:51:43.382  INFO 31820 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-04 11:51:43.396  INFO 31820 --- [http-nio-8098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-07-04 11:51:44.019  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 11:51:44.059  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-iot-signal-db-rest
+2019-07-04 11:51:44.060  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.netflix.loadbalancer.BaseLoadBalancer  : Client: iot-signal-db-rest instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-signal-db-rest,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-07-04 11:51:44.066  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2019-07-04 11:51:44.095  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-07-04 11:51:44.097  INFO 31820 --- [hystrix-iot-signal-db-rest-1] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client iot-signal-db-rest initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=iot-signal-db-rest,current list of Servers=[192.168.2.101:8075],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.101:8075;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@52c8dac7
+2019-07-04 11:51:44.806 ERROR 31820 --- [http-nio-8098-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: TestFeignClient#testQuery(String) timed-out and no fallback available.] with root cause
+
+java.util.concurrent.TimeoutException: null
+	at com.netflix.hystrix.AbstractCommand.handleTimeoutViaFallback(AbstractCommand.java:997) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand.access$500(AbstractCommand.java:60) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:609) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$12.call(AbstractCommand.java:601) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:140) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach$DoOnEachSubscriber.onError(OnSubscribeDoOnEach.java:87) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$1.run(AbstractCommand.java:1142) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:41) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable$1.call(HystrixContextRunnable.java:37) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContextRunnable.run(HystrixContextRunnable.java:57) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$2.tick(AbstractCommand.java:1159) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.util.HystrixTimer$1.run(HystrixTimer.java:99) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308) ~[na:1.8.0_161]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
+
+2019-07-04 11:51:45.070  INFO 31820 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: iot-signal-db-rest.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647

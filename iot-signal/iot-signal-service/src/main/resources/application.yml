@@ -1,0 +1,75 @@
+server:
+  port: 8074
+  servlet:
+    context-path: /signal_server
+  tomcat:
+    uri-encoding: UTF-8
+
+
+eureka:
+  instance:
+    hostname: iot-signal-service
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/
+
+spring:
+  application:
+    name: iot-signal-servie
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream: # kafka 消息传递配置
+      kafka:
+        binder:
+          brokers: 118.25.46.85:9092
+          auto-create-topics: true
+          auto-add-partitions: true
+      bindings:
+        input-general-json:
+          content-type: application/json
+          group: generalJsonGroup
+          destination: general-json
+          partitioned: true #开启消费分区
+    #开启Spring Cloud的重试功能
+    loadbalancer:
+      retry:
+        enabled: true #开启Spring Cloud的重试功能。（当一次服务调用失败后，不会立即抛出一次，而是再次重试另一个服务）
+  #Spring boot视图配置
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .html
+    static-path-pattern: /static/**  #静态文件访问配置
+
+feign:
+  # 配置httpclient线程池
+  httpclient:
+    enabled: true
+    connection-timeout: 6000
+    time-to-live: 900
+  # 开启Feign的熔断功能
+  hystrix:
+    enabled: true #在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+  # 设置feign请求超时的处理
+  client:
+    config:
+      iot-signal-service: #指定服务名称，default代表所有服务
+        connectTimeout: 10000
+        readTimeout: 20000
+  # 配置对请求和响应进行GZIP压缩（以减少通信过程中的性能损耗）
+  compression:
+    request:
+      enabled: true #开启请求压缩
+      mime-types: text/html,application/xml,application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true  #开启响应压缩
+
+#日志级别
+logging:
+  level:
+    com.shine.iot.signal.service: DEBUG #com.shine.iot.signal.service包下的日志级别都为debug
+  file: logs/iot-signal-service.log

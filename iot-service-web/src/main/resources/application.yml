@@ -1,0 +1,49 @@
+server:
+  port: 8098
+
+#eureka配置信息
+eureka:
+  instance:
+    hostname: iot-service-web
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url: # 服务器注册/获取服务器的zone
+      defaultZone: http://118.25.46.85:8090/eureka/ #http://127.0.0.1:8090/eureka/
+
+feign:
+  hystrix:
+    enabled: true #在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+  httpclient:
+    enabled: true #配置httpclient线程池
+  compression: #开启请求与响应的压缩功能
+    request:
+      enabled: true
+    response:
+      enabled: true
+  #设置feign请求超时的处理
+  client:
+    config:
+      iot-service-api-impl: #default代表所有服务
+        connectTimeout: 10000
+        readTimeout: 20000
+
+spring:
+  #项目名  本服务注册到注册到服务器的名称, 这个名称就是后面调用服务时的服务标识符
+  application:
+    name: iot-service-web
+  #当遇到同样名字的时候，是否允许覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+
+# Logger日志文件配置
+logging:
+  level:
+    com.shine.iot.service.web: DEBUG
+  file: logs/iot-service-web.log

@@ -1,0 +1,24 @@
+#注册中心服务端口号
+server:
+  port: 8090
+#服务名称
+spring:
+  application:
+    name: shine-eureka
+
+#配置注册中心
+eureka:
+  instance:
+    hostname: shine-eureka
+    #prefer-ip-address: true
+  client:
+    register-with-eureka: false #标志此服务是否要注册到注册中心，false（此服务就是注册中心）
+    fetch-registry: false #标志此服务是否要去注册中心，获取服务列表信息，false（注册中心是提供服务列表的）
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+#  server:
+#    enable-self-preservation: false  #是否要设置成保护模式
+#开启Eureka的ribbon
+ribbon:
+  eureka:
+    enabled: true

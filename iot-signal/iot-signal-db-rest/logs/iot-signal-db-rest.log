@@ -1,0 +1,37 @@
+2019-07-02 16:50:26.204  INFO 17656 --- [main] c.s.iot.signal.db.rest.TestServiceAR     : No active profile set, falling back to default profiles: default
+2019-07-02 16:50:28.302  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-02 16:50:28.312  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-02 16:50:28.393  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 0 repository interfaces.
+2019-07-02 16:50:29.565  INFO 17656 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b426ef9d-61ea-3834-a8e5-c7f571f3e274
+2019-07-02 16:50:30.250  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$88429d08] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-02 16:50:30.332  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a45ca005] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-02 16:50:32.631  WARN 17656 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-02 16:50:32.632  INFO 17656 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-02 16:50:32.648  WARN 17656 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-02 16:50:32.649  INFO 17656 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-02 16:50:34.235  INFO 17656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-02 16:50:38.622  INFO 17656 --- [main] c.s.iot.signal.db.rest.TestServiceAR     : Started TestServiceAR in 16.641 seconds (JVM running for 21.935)
+2019-07-02 16:50:39.731 ERROR 17656 --- [main] c.s.i.s.db.rest.web.PayloadSignalRest    : null
+2019-07-02 16:50:39.772  INFO 17656 --- [Thread-6] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-02 16:50:39.778  INFO 17656 --- [Thread-6] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application IOT-SIGNAL-DB-REST with eureka with status DOWN
+2019-07-02 16:50:39.951  INFO 17656 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-02 16:53:14.683  INFO 21964 --- [main] c.s.iot.signal.db.rest.TestServiceAR     : No active profile set, falling back to default profiles: default
+2019-07-02 16:53:16.972  INFO 21964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-02 16:53:16.980  INFO 21964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-02 16:53:17.052  INFO 21964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2019-07-02 16:53:17.921  INFO 21964 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b426ef9d-61ea-3834-a8e5-c7f571f3e274
+2019-07-02 16:53:18.451  INFO 21964 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$88429d08] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-02 16:53:18.569  INFO 21964 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a45ca005] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-02 16:53:20.912  WARN 21964 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-02 16:53:20.912  INFO 21964 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-02 16:53:20.928  WARN 21964 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-07-02 16:53:20.928  INFO 21964 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-07-02 16:53:22.139  INFO 21964 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-02 16:53:26.192  INFO 21964 --- [main] c.s.iot.signal.db.rest.TestServiceAR     : Started TestServiceAR in 14.661 seconds (JVM running for 18.55)
+2019-07-02 16:53:27.175  INFO 21964 --- [main] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
+2019-07-02 16:53:27.497  INFO 21964 --- [main] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
+2019-07-02 16:53:27.649  INFO 21964 --- [Thread-6] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-07-02 16:53:27.660  INFO 21964 --- [Thread-6] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application IOT-SIGNAL-DB-REST with eureka with status DOWN
+2019-07-02 16:53:27.779  INFO 21964 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-02 16:53:27.812  INFO 21964 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Shutdown initiated...
+2019-07-02 16:53:27.840  INFO 21964 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Shutdown completed.

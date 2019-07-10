@@ -1,0 +1,22 @@
+
+feign接口传参：
+    1.传递普通参数：
+        服务提供者接口暴露定义：
+            @GetMapping("/org/{id}")
+            public OrgBaseInfoModel getOne (@PathVariable Long id) {.......}
+        feignClient接口定义：（必须标注参数名字）
+            @FeignClient
+            public class XXX-FeignService {
+                @GetMapping("/org/{id}")
+                OrgBaseInfoModel getOne(@PathVariable("id") Long id); //此处写出来参数名称“id”，否则报错
+            }
+
+    2.传递bean类型参数：
+        注意：feign客户端使用get请求无法传递对象类型参数，会默认为Post请求传递参数！！！
+            所以解决该问题方法之一，可以将服务者暴露的接口请求方式变为Post请求。
+        服务提供者接口暴露定义：
+             @PostMapping("/orgs")  //post请求方式；参数标明@RequestBody
+             public List<OrgBaseInfoModel> queryListByObj(@RequestBody OrgBaseInfoModel orgBaseFilter) {.....}
+        feignClient接口定义：
+            @PostMapping("/orgs")  //post请求方式，RPC请求服务者接口；参数标明@RequestBody
+            List<OrgBaseInfoModel> queryListByObj(@RequestBody OrgBaseInfoModel orgBaseFilter);

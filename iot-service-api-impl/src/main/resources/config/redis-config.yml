@@ -1,0 +1,22 @@
+#redis相关配置
+spring:
+  redis:
+    host: 127.0.0.1 #Redis服务器地址
+    database: 1 #数据库索引（默认为0）
+    port: 6379 #redis服务器连接端口（默认6379）
+    password: #连接密码（默认为空）
+    timeout: 60 #数据库连接超时时间，springboot2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位
+    # 连接池配置，springboot2.0中直接使用jedis或者lettuce配置连接池
+    jedis:
+      pool:
+        max-idle: 100 # 最大空闲连接数
+        max-to
+        min-idle: 10 # 最小空闲连接数
+        max-wait: -1ms # 等待可用连接的最大时间，负数为不限制(默认-1s)
+        max-active: -1 # 最大活跃连接数，负数为不限制
+      shutdown-timeout: 100ms
+
+    #redis集群配置
+#    cluster:
+#      nodes: 192.168.177.128:7001,192.168.177.128:7002,192.168.177.128:7003,192.168.177.128:7004,192.168.177.128:7005,192.168.177.128:7006
+#      max-redirects: 3

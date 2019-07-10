@@ -1,0 +1,35 @@
+#服务信息
+server:
+  port: 8096
+  servlet:
+    context-path: /
+
+#eureka配置信息
+eureka:
+  instance:
+    hostname: iot-service-api
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/ #http://127.0.0.1:8090/eureka/
+
+spring:
+  #项目名
+  application:
+    name: iot-service-api
+  #当遇到同样名字的时候，是否允许覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+#开启ribbon
+ribbon:
+  eureka:
+    enabled: true
+#开启feign对于hystix熔断处理的支持
+feign:
+  hystrix:
+    enabled: true
+
+
+

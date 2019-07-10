@@ -1,0 +1,14 @@
+loralite:
+  #监听loraLite协议的信号IP和端口
+  clientnetserver:
+    ipaddr: 127.0.0.1
+    port: 18001
+  #下发ACK的延时
+  ack:
+    send:
+      delayed: 1000
+#  # 构建loraLite测试环境，将接收到的信号转发的测试服务器
+#  test:
+#    netserver:
+#      ipaddr: 127.0.0.1
+#      port: 1701

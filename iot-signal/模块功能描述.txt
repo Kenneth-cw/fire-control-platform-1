@@ -1,0 +1,48 @@
+iot-signal模块划分与分析
+
+    模块功能说明：
+    		iot-signal-model:
+    			1. 各类型设备信号信息，对应存储到数据库的 entity
+    			2. 信号数据处理以及传输时所用到的dto
+
+    		iot-signal-utils:（作用：作为信号数据解析器类库，其他模块引入此jar）
+    		    1. AUG-TLV不同版本的解析器
+    		    2. payload不同设备、不同版本的解析器
+    			3. 信号读取解析所用到的工具类
+    			4. 信号读取解析所用到的枚举类
+
+    		iot-signal-monitor：8070（监听AUGTLV数据）
+    			1. 监听端口，接受终端上来的消息；（一个端口只接受一个厂商的一种协议的信号）
+    			2. 将信号发送到Kafka消息队列中；（以 厂商+协议 分类发送到kafka，topic：AUG-TLV-LoraLite）
+    			3. 存储从终端接收到原始信号；（我们需要存储此数据：不过滤任何信息，只要CRC正确，全部进行存储）
+
+    		iot-signal-parser: 8071（解析AUG-TLV，剥离出payload数据）
+    			1. 针对不同的topic：AUG-TLV-LoraLite，构建不同的解析器，解析信号，剥离出payload数据；
+    			2. 包裹payload数据的网关信息存储到数据库；（暂不需要 -- 例如：TLV数据存储，是否需要存储。）
+    			3. 将解析出的payload信号发送到Kafka消息队列中；（以 协议+设备类型 分类, topic：LoraLite-payload）
+
+            iot-signal-payload-different：8072（区分payload数据的设备类型、版本号）
+                1. 订阅topic：LoraLite-payload
+                2. 区分payload数据的设备类型、版本号
+                3. 针对不同的设备类型、版本，发送到不同的消息队列中（创建不同的Topic）
+                    eg: 烟感：payload-smoke-version-0、payload-smoke-version-1、payload-smoke-version-2；
+                        温感：payload-temperature-version-0
+                        ......
+                    说明：烟感-版本-0（MCUID为8字节）、烟感-版本-1（MCUID为16字节）、烟感-版本-2（无MCUID）
+
+    		iot-signal-reader: 8073 （烟感-版本-1的payload数据解析器，即16字节MCUID数据解析）
+    			1. 订阅topic：payload-smoke-version-1，解析payload数据
+    			2. 组建ACK数据，下发ACK。
+    			3. 存储原始的payload数据、ACK数据。
+    			4. 转换payload数据变成统一的json数据格式，将json数据发送到统一的端口。
+
+    		iot-signal-service: 8074
+    			1. 端口接受统一json格式的数据；
+    			2. 解析json数据；
+    			3. 发送短信、微信、语音电话、推送到web平台；
+    			4. 存储、更新设备信息；
+
+    		iot-signal-db-rest: 8075 （数据存储查询的服务模块）
+            	1. 与数据库交互，存储更新数据库表信息
+            	2. 数据库业务逻辑功能
+            	3. 暴露接口（rest风格）

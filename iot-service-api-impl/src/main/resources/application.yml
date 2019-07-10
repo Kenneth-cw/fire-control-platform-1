@@ -1,0 +1,100 @@
+#服务信息
+server:
+  port: 8097
+  servlet:
+    context-path: /
+
+#eureka配置信息
+eureka:
+  instance:
+    hostname: iot-service-api-impl
+    prefer-ip-address: true
+  #    status-page-url-path: http://${eureka.instance.hostname}/info
+  #    health-check-url-path: http://${eureka.instance.hostname}/health
+  #    home-page-url-path: http://${eureka.instance.hostname}/
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    #开启健康检查
+    #    healthcheck:
+    #      enabled: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/ #http://127.0.0.1:8090/eureka/ http://118.25.46.85:8090/eureka/
+
+spring:
+  #项目名
+  application:
+    name: iot-service-api-impl
+  #当遇到同样名字的时候，是否允许覆盖注册
+  main:
+    allow-bean-definition-overriding: true
+  #数据源连接信息
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.25.46.85:3306/iot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: iotuser
+    password: 3edc@wsx!qaz
+    # springBoot 2.x 默认使用的数据连接池为 HikariDataSource；springBoot1.x 默认使用Tomcat自带的数据库连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10  # 数据库连接池的最小维持连接数
+      maximum-pool-size: 25
+      auto-commit: true
+      idle-timeout: 600000 # 等待连接获取的最大超时时间
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      pool-name: ExpendHikariCP
+  #热部署配置
+  devtools:
+    restart:
+      enabled: true #该属性可以快速启用和禁止热部署，false不使用热部署
+      additional-paths: src/main/java  # 添加那个目录的文件需要restart
+      exclude: static/** # 排除那个目录的文件不需要restart
+      #additional-exclude: mydir/** # (自己新建的一些目录，不是项目目录中的)排除那个目录的文件不需要restart
+
+
+################## Mybatis Plus配置 ###########################
+mybatis-plus:
+  # 指定外部化 MyBatis Properties 配置，通过该配置可以抽离配置，实现不同环境的配置部署
+  #configuration-properties: classpath:mybatis/config.properties
+  type-aliases-package: com.shine.iot.entity #实体扫描，多个package用逗号或者分号分隔
+  mapper-locations: classpath:mappers/*.xml # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  #config-location: classpath:mybatis-config.xml # mybatis配置文件所在路径，不能与下面的configuration配置同用（功能一致）
+  configuration:
+    # 数据库列名：是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: false
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 懒加载
+    aggressive-lazy-loading: true
+    # NONE:不启用自动映射； PARTIAL:只对非嵌套的resultMap进行自动映射；FULL:对所有的 resultMap 都进行自动映射
+    auto-mapping-behavior: partial
+    # NONE:不做任何处理 (默认值)； WARNING：以日志的形式打印相关警告信息； FAILING:当作映射失败处理，并抛出异常和详细信息
+    auto-mapping-unknown-column-behavior: none
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用(只在开发时候打开)
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-underline: true # 表名使用驼峰命名，默认true
+      id-type: auto  # id类型
+      field-strategy: not_null
+      # 是否开启大写命名，默认不开启
+      #capital-mode: false
+      db-type: mysql
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+#pagehelper分页插件 //可以不配置，使用默认的配置
+#pagehelper:
+#  helper-dialect: mysql  #指定数据库方言
+#  reasonable: true  #pageNum<=0时返回第一页数据，pageNum超过总页数时返回最后一页数据
+#  support-methods-arguments: true
+#  params: count=countSql
+
+# 将mapper接口所在包的日志级别改成debug，可以在控制台打印sql
+logging:
+  level:
+    #     root: INFO
+    com.shine.iot.service.api.impl: DEBUG
+  file: logs/iot-service-api-impl.log

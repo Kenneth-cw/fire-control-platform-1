@@ -1,0 +1,48 @@
+server:
+  port: 8072
+#  servlet:
+#    context-path:
+
+spring:
+  application:
+    name: iot-signal-payload-diffrent
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 118.25.46.85:9092
+          auto-create-topics: true
+          auto-add-partitions: true
+      bindings:
+        input-loralite-payload:
+          content-type: text/plain #application/x-java-serialized-object #application/json
+          group: LoraLitePayloadGropu
+          destination: LoraLite-payload
+          partitioned: true
+        output-payload-type-version:
+          content-type: application/json
+          destination: payload-devType-version
+          producer:
+            partitionCount: 2
+
+#        output-payload-smoke-0: # 烟感-版本-0：MCU ID为8字节；
+#          content-type: application/json
+#          destination: payload-smoke-version-0
+#          producer:
+#            partitionCount: 2
+#        output-payload-smoke-1: # 烟感-版本-1：MCU ID为16字节。
+#          content-type: application/json
+#          destination: payload-smoke-version-1
+#          producer:
+#            partitionCount: 2
+#        output-payload-smoke-2: # 烟感-版本-2：无MCU ID；
+#          content-type: application/json
+#          destination: payload-smoke-version-2
+#          producer:
+#            partitionCount: 2
+logging:
+  level:
+    com.shine.iot.signal.payload.diffrent: DEBUG
+  file: logs/iot-signal-payload-diffrent.log

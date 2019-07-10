@@ -1,0 +1,65 @@
+server:
+  port: 8075
+  servlet:
+    context-path: /signal-db #ContextPath must start with '/' and not end with '/'
+
+#Eureka Client配置
+eureka:
+  instance:
+    hostname: iot-signal-db-rest
+    prefer-ip-address: true
+  #    instance-id:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/
+
+# 应用程序配置
+spring:
+  application:
+    name: iot-signal-db-rest
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://118.25.46.85:3306/iot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: iotuser
+    password: 3edc@wsx!qaz
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: DatebookHikariCP
+      auto-commit: true
+      minimum-idle: 10
+      maximum-pool-size: 30
+      idle-timeout: 600000 # 等待连接获取的最大超时时间
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+#myBatis Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.shine.iot.signal.db.rest.entity
+  global-config:
+    db-config:
+      db-type: mysql #数据库mysql
+      table-underline: true #表名使用驼峰命名，默认true
+      id-type: auto #id主键自增
+      field-strategy: not_null #字段策略：非 NULL判断
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  configuration:
+    aggressive-lazy-loading: true # 懒加载
+    #表字段：是否开启字段下划线模式，true: payload_data  false: payloadData
+    map-underscore-to-camel-case: false
+    cache-enabled: true #开启缓存
+    call-setters-on-nulls: true #如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #执行SQL打印在控制台
+
+#日志配置
+logging:
+  level:
+    com.shine.iot.signal.db.rest: DEBUG
+  file: logs/iot-signal-db-rest.log  #用来定义文件名,它不仅仅可以配置文件名，也可以路径+文件名。

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shine.iot.platform.service.mapper.DeviceBaseInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="devBaseMap" type="com.shine.iot.model.entity.DeviceBaseInfoModel">
+        <id column="deviceId" property="deviceId" jdbcType="BIGINT"/>
+        <result column="deviceTypeCode" property="deviceTypeCode" jdbcType="VARCHAR"/>
+        <result column="protocolType" property="protocolType" jdbcType="BIGINT"/>
+        <result column="deviceModelId" property="deviceModelId" jdbcType="BIGINT"/>
+        <result column="deviceNumber" property="deviceNumber" jdbcType="VARCHAR"/>
+        <result column="devEUI" property="devEUI" jdbcType="VARCHAR"/>
+        <result column="deviceSN" property="deviceSN" jdbcType="VARCHAR"/>
+        <result column="deviceQRCode" property="deviceQRCode" jdbcType="VARCHAR"/>
+        <result column="deviceImeiCode" property="deviceImeiCode" jdbcType="VARCHAR"/>
+        <result column="deviceSimNo" property="deviceSimNo" jdbcType="VARCHAR"/>
+        <result column="deviceIccidCode" property="deviceIccidCode" jdbcType="VARCHAR"/>
+        <result column="mcuID" property="mcuID" jdbcType="VARCHAR"/>
+        <result column="mcuIDHex" property="mcuIDHex" jdbcType="VARCHAR"/>
+        <result column="workState" property="workState" jdbcType="BIGINT"/>
+        <result column="isValid" property="isValid" jdbcType="VARCHAR"/>
+        <result column="deviceProvider" property="deviceProvider" jdbcType="BIGINT"/>
+        <result column="deviceProducedDate" property="deviceProducedDate" jdbcType="TIMESTAMP"/>
+        <result column="deviceAddr" property="deviceAddr" jdbcType="VARCHAR"/>
+        <result column="deviceGpsLati" property="deviceGpsLati" jdbcType="VARCHAR"/>
+        <result column="deviceGpsLong" property="deviceGpsLong" jdbcType="VARCHAR"/>
+        <result column="deviceGpsAlti" property="deviceGpsAlti" jdbcType="VARCHAR"/>
+        <result column="deviceFixUser" property="deviceFixUser" jdbcType="VARCHAR"/>
+        <result column="deviceFixDate" property="deviceFixDate" jdbcType="TIMESTAMP"/>
+        <result column="areaName" property="areaName" jdbcType="VARCHAR"/>
+        <result column="deviceNote" property="deviceNote" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="queryCondition">
+        <if test="deviceId != null and deviceId !=''">AND deviceId = #{deviceId}</if>
+        <if test="deviceTypeCode != null and deviceTypeCode !=''">AND deviceTypeCode = #{deviceTypeCode}</if>
+        <if test="protocolType != null and protocolType !=''">AND protocolType = #{protocolType}</if>
+        <if test="deviceModelId != null and deviceModelId !=''">AND deviceModelId = #{deviceModelId}</if>
+        <if test="deviceNumber != null and deviceNumber !=''">AND deviceNumber = #{deviceNumber}</if>
+        <if test="devEUI != null and devEUI !=''">AND devEUI = #{devEUI}</if>
+        <if test="deviceSN != null and deviceSN !=''">AND deviceSN = #{deviceSN}</if>
+        <if test="deviceImeiCode != null and deviceImeiCode !=''">AND deviceImeiCode = #{deviceImeiCode}</if>
+        <if test="deviceSimNo != null and deviceSimNo !=''">AND deviceSimNo = #{deviceSimNo}</if>
+        <if test="deviceIccidCode != null and deviceIccidCode !=''">AND deviceIccidCode = #{deviceIccidCode}</if>
+        <if test="deviceQRCode != null and deviceQRCode !=''">AND deviceQRCode = #{deviceQRCode}</if>
+        <if test="mcuID != null and mcuID !=''">AND mcuID = #{mcuID}</if>
+        <if test="workState != null and workState !=''">AND workState = #{workState}</if>
+        <if test="deviceAddr != null and deviceAddr !=''">AND deviceAddr like concat('%',#{deviceAddr}, '%')</if>
+    </sql>
+
+    <select id="pageQueryAreaDevList" resultType="com.shine.iot.model.dto.OrgAreaDevInfoDto">
+        select devbase.deviceId, devbase.deviceTypeCode, devbase.deviceNumber, devbase.devEUI, devbase.deviceSN,
+        devbase.devEUI, devbase.workState, devbase.isValid,
+        area.areaID, area.areaName from devicebase devbase
+        inner join areadevicemapinfo areadevs on areadevs.deviceId = devbase.deviceId
+        inner join areainfo area on area.areaID = areadevs.areaId
+        <where>
+            <if test="device.deviceTypeCode != null and device.deviceTypeCode !=''">AND devbase.deviceTypeCode =
+                #{deviceTypeCode}
+            </if>
+            <if test="device.devEUI != null and device.devEUI !=''">AND devbase.devEUI = #{devEUI}</if>
+            <if test="device.workState != null and device.workState !=''">AND devbase.workState = #{workState}</if>
+            <if test="device.deviceAddr != null and device.deviceAddr !=''">AND devbase.deviceAddr like
+                concat('%',#{deviceAddr}, '%')
+            </if>
+            <if test="areaIds != null">
+                AND areadevs.areaId in
+                <foreach collection="areaIds" item="item_id" separator="," open=" (" close=")">
+                    #{item_id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertObj" parameterType="com.shine.iot.model.entity.DeviceBaseInfoModel" useGeneratedKeys="true"
+            keyProperty="deviceId">
+        insert into devicebase
+        (deviceId, deviceTypeCode, deviceModelId, protocolType, deviceSN, devEUI, deviceQRCode, deviceImeiCode, placeid,
+         deviceProvider, deviceProducedDate, deviceSimNo, deviceIccidCode,
+         mcuID, workState, mcuIDHex, deviceNumber, areaName, deviceFixUser, deviceFixDate, deviceAddr, deviceGpsLati,
+         deviceGpsLong, deviceGpsAlti, isValid, deviceNote)
+        VALUES
+        (#{deviceId,jdbcType=BIGINT}, #{deviceTypeCode,jdbcType=VARCHAR}, #{deviceModelId,jdbcType=BIGINT},
+         #{protocolType,jdbcType=BIGINT}, #{deviceSN,jdbcType=VARCHAR},
+         #{devEUI,jdbcType=VARCHAR}, #{deviceQRCode,jdbcType=VARCHAR}, #{deviceImeiCode,jdbcType=VARCHAR},
+         #{placeid,jdbcType=BIGINT}, #{deviceProvider,jdbcType=BIGINT},
+         #{deviceProducedDate,jdbcType=TIMESTAMP}, #{deviceSimNo,jdbcType=VARCHAR}, #{deviceIccidCode,jdbcType=VARCHAR},
+         #{mcuID,jdbcType=VARCHAR}, #{workState,jdbcType=BIGINT},
+         #{mcuIDHex,jdbcType=VARCHAR}, #{deviceNumber,jdbcType=VARCHAR}, #{areaName,jdbcType=VARCHAR},
+         #{deviceFixUser,jdbcType=VARCHAR}, #{deviceFixDate,jdbcType=TIMESTAMP}, #{deviceAddr,jdbcType=VARCHAR},
+         #{deviceGpsLati,jdbcType=VARCHAR}, #{deviceGpsLong,jdbcType=VARCHAR}, #{deviceGpsAlti,jdbcType=VARCHAR},
+         #{isValid,jdbcType=VARCHAR}, #{deviceNote,jdbcType=VARCHAR})
+    </insert>
+
+
+</mapper>

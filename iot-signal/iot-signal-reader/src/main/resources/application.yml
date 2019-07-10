@@ -1,0 +1,50 @@
+server:
+  port: 8073
+  servlet:
+    context-path: /
+
+eureka:
+  instance:
+    hostname: iot-signal-reader
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/
+
+spring:
+  application:
+    name: iot-signal-reader
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 118.25.46.85:9092 # kafka服务器列表
+          auto-create-topics: true
+          auto-add-partitions: true
+      bindings:
+        input-payload-type-version: #自定义输入消息通道
+          content-type: application/json
+          group: PayloadDevTypeVersionGroup #消费者所属分组
+          destination: payload-devType-version #订阅topic
+          partitioned: true #开启消费分区
+        output-general-json:
+          content-type: application/json
+          destination: general-json
+          producer:
+            partitionCount: 2
+      default-binder: kafka #默认使用的binder为kafka
+
+feign:
+  httpclient:
+    enabled: true  #配置httpclient线程池
+  hystrix:
+    enabled: true #在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+
+logging:
+  level:
+    com.shine.iot.signal.reader: DEBUG
+  file: logs/iot-signal-reader.log
+

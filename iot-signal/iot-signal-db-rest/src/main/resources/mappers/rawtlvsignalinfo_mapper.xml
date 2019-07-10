@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shine.iot.signal.db.rest.dao.RawTLVSignalDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="rawSignalBaseMap" type="com.shine.iot.signal.db.rest.entity.RawTLVSignalInfoModel">
+        <id column="rawId" property="rawId" jdbcType="BIGINT"/>
+        <result column="rcvTime" property="rcvTime" jdbcType="TIMESTAMP"/>
+        <result column="rawSignal" property="rawSignal" jdbcType="VARCHAR"/>
+        <result column="gwIP" property="gwIP" jdbcType="VARCHAR"/>
+        <result column="gwPort" property="gwPort" jdbcType="BIGINT"/>
+        <result column="macAddress" property="macAddress" jdbcType="VARCHAR"/>
+        <result column="note" property="note" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        rawId
+        ,
+        rcvTime,
+        rawSignal,
+        gwIP,
+        gwPort,
+        macAddress
+    </sql>
+
+    <sql id="queryCondition">
+        <if test="rawId != null and rawId !=''">AND rawId = #{rawId}</if>
+        <if test="rcvTime != null and rcvTime !=''">AND rcvTime = #{rcvTime}</if>
+        <if test="rawSignal != null and rawSignal !=''">AND rawSignal = #{rawSignal}</if>
+        <if test="gwIP != null and gwIP !=''">AND gwIP = #{gwIP}</if>
+        <if test="gwPort != null and gwPort !=''">AND gwPort = #{gwPort}</if>
+        <if test="macAddress != null and macAddress !=''">AND macAddress = #{macAddress}</if>
+        <if test="note != null and note !=''">AND note = #{note}</if>
+    </sql>
+
+
+    <!-- 若不需要自动返回主键，将useGeneratedKeys="true" keyProperty="id"去掉即可(当然如果不需要自动返回主键，直接用注解即可) -->
+    <!--  <insert id="insertUser" parameterType="User" useGeneratedKeys="false" keyProperty="userId" >
+          <![CDATA[
+          INSERT INTO user
+          (
+              username,
+              name,
+              age,
+              balance
+          )
+          VALUES
+          (
+              #{username, jdbcType=VARCHAR},
+              #{name, jdbcType=VARCHAR},
+              #{age, jdbcType=TINYINT},
+              #{balance, jdbcType=VARCHAR}
+          )
+          ]]>
+      </insert>-->
+
+    <!-- <select id="queryUserById" resultMap="result" parameterType="Long">
+         select * from userInfo
+         where userId = #{userId,jdbcType=BIGINT}
+         ###############
+         WHERE ID in
+   <foreach item="item" index="index" collection="list"
+       open="(" separator="," close=")">
+         #{item}
+   </foreach>
+         ##############
+         <![CDATA[ <= ]]>
+     </select>
+
+     <select id="queryAllUsers" resultMap="result">
+         select * from userInfo
+     </select>-->
+</mapper>

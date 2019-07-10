@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shine.iot.core.mapper.AreaBaseInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="AreaBaseMap" type="com.shine.iot.core.entity.AreaInfoModel">
+        <id column="areaID" property="areaID" jdbcType="BIGINT"/>
+        <result column="parentAreaID" property="parentAreaID" jdbcType="BIGINT"/>
+        <result column="areaNo" property="areaNo" jdbcType="VARCHAR"/>
+        <result column="areaName" property="areaName" jdbcType="VARCHAR"/>
+        <result column="areaType" property="areaType" jdbcType="VARCHAR"/>
+        <result column="areaLocation" property="areaLocation" jdbcType="VARCHAR"/>
+        <result column="buildingLocation" property="buildingLocation" jdbcType="VARCHAR"/>
+        <result column="areaLocProvCode" property="areaLocProvCode" jdbcType="VARCHAR"/>
+        <result column="areaLocCityCode" property="areaLocCityCode" jdbcType="VARCHAR"/>
+        <result column="areaLocDistCode" property="areaLocDistCode" jdbcType="VARCHAR"/>
+        <result column="areaLocProv" property="areaLocProv" jdbcType="VARCHAR"/>
+        <result column="areaLocCity" property="areaLocCity" jdbcType="VARCHAR"/>
+        <result column="areaLocDist" property="areaLocDist" jdbcType="VARCHAR"/>
+        <result column="areaLocDetail" property="areaLocDetail" jdbcType="VARCHAR"/>
+        <result column="areaPostCode" property="areaPostCode" jdbcType="VARCHAR"/>
+        <result column="areaIDPath" property="areaIDPath" jdbcType="VARCHAR"/>
+        <result column="areaNote" property="areaNote" jdbcType="VARCHAR"/>
+        <result column="creatorName" property="creatorName" jdbcType="VARCHAR"/>
+        <result column="creatorType" property="creatorType" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="lastUpdator" property="lastUpdator" jdbcType="VARCHAR"/>
+        <result column="lastUpdateTime" property="lastUpdateTime" jdbcType="VARCHAR"/>
+        <result column="lastUpdatorType" property="lastUpdatorType" jdbcType="CHAR"/>
+        <result column="areaCode" property="areaCode" jdbcType="VARCHAR"/>
+        <result column="areaLong" property="areaLong" jdbcType="VARCHAR"/>
+        <result column="areaLati" property="areaLati" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        areaID
+        ,
+        parentAreaID,
+        areaName,
+        areaType,
+        areaLocDetail,
+        areaIDPath,
+        areaNo
+    </sql>
+
+    <sql id="queryCondition">
+        <if test="areaID != null and areaID !=''">AND areaID = #{area.areaID}</if>
+        <if test="parentAreaID != null and parentAreaID !=''">AND parentAreaID = #{area.parentAreaID}</if>
+        <if test="areaNo != null and areaNo !=''">AND areaID = #{area.areaNo}</if>
+        <if test="areaName != null and areaName !=''">AND areaName like concat('%',#{area.areaName},'%')</if>
+        <if test="areaType != null and areaType !=''">AND areaType = #{area.areaType}</if>
+        <if test="areaLocProv != null and areaLocProv !=''">AND areaLocProv = #{area.areaLocProv}</if>
+        <if test="areaLocCity != null and areaLocCity !=''">AND areaLocCity = #{area.areaLocCity}</if>
+        <if test="areaLocDist != null and areaLocDist !=''">AND areaLocDist = #{area.areaLocDist}</if>
+        <if test="areaLocDetail != null and areaLocDetail !=''">AND areaLocDetail like concat('%',#{area.areaLocDetail},
+            '%')
+        </if>
+    </sql>
+
+    <select id="getOrgAreaIds" resultType="java.lang.Long">
+        select areaID
+        from areainfo
+        where areaIDPath like concat('%\_', #{areaId}, '\_%')
+           or areaIDPath like concat(#{areaId}, '\_%')
+           or areaID = #{areaId}
+    </select>
+
+
+</mapper>

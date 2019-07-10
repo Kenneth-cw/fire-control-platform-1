@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test webSocket connect</title>
+</head>
+<body>
+
+<h1> test webSocket connect </h1>
+
+<script src="../static/websocket.js"></script>
+<script src="../static/js/sockjs-0.3.min.js"></script>
+<script>
+    window.onload = function () {
+        //加载websocket，保持长连接
+        // updateUrl('/iotadmin/websocket');
+        updateUrl('/websocket');
+        websocketConnect();
+        websocket_timer();
+        websocket_openInterval();
+        //时间
+        // timer();
+    }
+</script>
+
+<!-- webSocket连接 -->
+<script>
+    // 打开一个 web socket
+    var ws = new WebSocket("ws://localhost:8080/websocket?user=Tony");
+    ws.onopen = function () {
+        // Web Socket 已连接上，使用 send() 方法发送数据
+        ws.send("测试发送");
+        console.log('open');
+    };
+    ws.onmessage = function (e) {
+        console.log('message', e.data);
+    };
+    ws.onclose = function () {
+        console.log('close');
+    };
+</script>
+
+<!-- sockJs连接 -->
+<!--<script src="//cdn.jsdelivr.net/sockjs/1.0.0/sockjs.min.js"></script>
+<script>
+    var sock = new SockJS('http://localhost:8080/sock-js?user=Tony');
+    sock.onopen = function () {
+        sock.send("测试发送");
+        console.log('open');
+    };
+    sock.onmessage = function (e) {
+        console.log('message', e.data);
+    };
+    sock.onclose = function () {
+        console.log('close');
+    };
+</script>-->
+
+</body>
+</html>

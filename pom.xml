@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.shine</groupId>
+    <artifactId>fire-control-platform</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>fire-control-platform-消防监控平台父模块</name>
+    <description>fire control platform version1.0</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>iot-eureka</module>
+        <module>iot-model</module>
+        <module>iot-service-api</module>
+        <module>iot-service-api-impl</module>
+        <module>iot-utils</module>
+        <module>iot-kafka</module>
+        <module>iot-redis</module>
+        <module>iot-platform-service</module>
+
+        <module>iot-signal</module>
+    </modules>
+
+    <!-- 集中定义依赖版本号 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <!-- 消防监控平台版本 -->
+        <fire-platform.version>0.0.1-SNAPSHOT</fire-platform.version>
+
+        <httpclient.version>4.5.9</httpclient.version>
+
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <mysql.version>8.0.16</mysql.version>
+
+        <commons-lang3.version>3.9</commons-lang3.version>
+
+    </properties>
+
+    <!--<dependencies>
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-test</artifactId>
+             <scope>test</scope>
+         </dependency>
+     </dependencies>-->
+
+    <!-- 凡是版本的定义，都建议放在最外层的dependencyManagement中，方便做到统一管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <!-- 数据库操作的依赖 -->
+            <!--<dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+            </dependency>-->
+            <!-- mybatis Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- commons lang3 工具类 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>    &lt;!&ndash;默认关掉单元测试 &ndash;&gt;
+                </configuration>
+            </plugin>
+        </plugins>-->
+    </build>
+
+
+</project>

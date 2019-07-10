@@ -1,0 +1,84 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: iot-signal-monitor
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://118.25.46.85:8090/eureka/
+
+spring:
+  #项目名
+  application:
+    name: iot-signal-monitor
+  main:
+    allow-bean-definition-overriding: true
+  #Cloud stream 结合kafka 组件消息队列
+  cloud:
+    stream:
+      # stream设置成使用kafka
+      kafka:
+        binder:
+          #          default-binder: kafka #默认的binder是kafka
+          brokers: 118.25.46.85:9092 #kafka服务地址，kafka的服务器列表（Kafka集群包含一个或多个服务器）
+          min-partition-count: 1
+          #kafka binder在启动时会尝试连接本地zookeeper，如果本地没有zookeeper服务的话就会报错导致启动失败。则设置：auto-create-topics: false
+          auto-create-topics: true
+          auto-add-partitions: true
+
+      #输入通道配置信息,配置自己定义的通道与哪个中间件交互
+      bindings:
+        output-augTLV: #消息通道名称，默认为output，可自定义;
+          context-path: application-json #序列化方式：POJO或者字符串
+          destination: AUG-TLV-LoraLite #目标主题，即Topic
+          producer:
+            partitionCount: 3 #指定的分区数量
+        # 定义多输出通道，例子
+    #        output-test-1:
+    #          destination: output-test-1
+    #          context-path: text/plain #字符串
+    #        output-test-2:
+    #          destination: output-test-2
+    #          context-path: application/json
+
+    #  kafka:
+    #    producer:
+    #      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    #      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    # 配置多环境配置文件 profiles:  active: dev,test,prod
+    #对应了yml文件：开发环境application-dev.yml、测试环境application-test.yml、生产环境application-prod.yml
+    # 定义其他*.yml文件（注意：必须以application-开头），application.yml中激活该文件
+    # 执行java -jar xxx.jar –spring.profiles.active=test 即运行程序使用测试环境
+  #  profiles:
+  #    active: loralite
+  # SpringBoot默认加载的是application.yml文件，所以想要引入其他配置的yml文件，就要在application.yml中包含该文件（注意：必须以application-开头）
+  profiles:
+    include: dev
+
+# TRACE < DEBUG < INFO < WARN < ERROR < FATAL
+logging:
+  level:
+    #root: DEBUG
+    com.shine.iot.signal.monitor: DEBUG
+  file: logs/loralite-signal-monitor.log
+  # Spring Boot 默认把日志输入到console，如果我们要把日志输入到文件中，需要配置logging.file 或者logging.path属性性。
+#  path: logs # logging.path属性用来定义日志文件路径
+#  file: logs/loralite-signal-monitor.log # logging.file属性用来定义文件名,它不仅仅可以配置文件名，也可以路径+文件名。
+#  pattern:
+#    # 设置logging.patter.file属性，改变文件中的日志样式
+#    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+#    # 设置logging.patter.console属性我们能改变输出到console的日志样式。日志样式包括时间，日志级别，线程名，日志名以及消息。
+#    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+
+# feign配置
+feign:
+  hystrix:
+    enabled: false #在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
+  httpclient:
+    enabled: true #配置httpclient线程池
+  okhttp:
+    enabled: false
