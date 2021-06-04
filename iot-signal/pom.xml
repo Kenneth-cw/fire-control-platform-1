@@ -37,7 +37,7 @@
 
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <mysql.version>8.0.16</mysql.version>
-        <apache-httpclient.version>4.5.9</apache-httpclient.version>
+        <apache-httpclient.version>4.5.13</apache-httpclient.version>
         <openfeign-httpclient.version>10.1.0</openfeign-httpclient.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commos-codec.version>1.11</commos-codec.version>

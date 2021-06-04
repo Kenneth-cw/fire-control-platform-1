@@ -38,7 +38,7 @@
         <!-- 消防监控平台版本 -->
         <fire-platform.version>0.0.1-SNAPSHOT</fire-platform.version>
 
-        <httpclient.version>4.5.9</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
 
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <mysql.version>8.0.16</mysql.version>
